@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ========================================
+         ACHIEVE ACADEMY - THANK YOU PAGE
+         High-Converting Post-Download Upsell
+         Copyright © 2025 Adam J. Lovell. All Rights Reserved.
+         
+         STRATEGIC PURPOSE: Maximum conversion after free PDF download
+         GOAL: Convert warm leads to paid PDF customers immediately
+         ======================================== -->
+    <meta charset="UTF-8">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TS2G01L024"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-TS2G01L024');
+    </script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thank you for downloading! Get the complete Foundational Statistics guide and eliminate all your mathematical risk.">
+    <meta name="robots" content="noindex, follow">
+    <title>Thank You - Complete Your Mathematical Foundation | Achieve Academy</title>
+    
+    <!-- Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Stripe Payment Integration -->
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+    <!-- ========================================
+         THANK YOU HERO SECTION
+         Immediate Validation & Success
+         ======================================== -->
+    <section class="bg-gradient-to-br from-emerald-600 to-emerald-500 py-8 text-white text-center">
+        <div class="container mx-auto px-4">
+            <div class="text-6xl mb-4 animate-bounce"></div>
+            <h1 class="text-white mb-2 text-3xl font-bold font-display">Success! Your Download is Starting</h1>
+            <p class="text-white/90 text-lg m-0">Your free Applied Math Quantities, Units and Numeric Meaning PDF is downloading now</p>
+        </div>
+    </section>
+
+    <!-- ========================================
+         HIGH-CONVERTING UPSELL SECTION
+         Strategic Post-Download Conversion
+         ======================================== -->
+    <section class="bg-white py-16">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <!-- Pre-order Headline -->
+            <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 font-display">
+                Pre-order the Complete Guide
+            </h1>
+            <p class="text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
+                The free download covers one foundational concept. The complete guide provides a comprehensive curriculum on statistical analysis for professionals. Pre-order now to be the first to receive it.
+            </p>
+            
+            <!-- Pre-order CTA Card -->
+            <div class="bg-gray-50 border border-gray-200 rounded-xl p-8 shadow-lg">
+                <h3 class="text-2xl font-bold text-indigo-600 mb-2 font-display">Foundational Statistics for Data Analysis</h3>
+                <p class="text-gray-500 mb-6">The complete professional PDF guide.</p>
+
+                <div class="my-8">
+                    <span class="text-5xl font-extrabold text-gray-900">$14.99</span>
+                    <span class="text-base text-gray-500 font-medium">one-time price</span>
+                </div>
+                
+                <a href="#" class="inline-block w-full max-w-sm py-4 px-8 bg-amber-500 text-white no-underline text-lg font-bold rounded-lg transition-all duration-300 shadow-md hover:bg-amber-600 hover:-translate-y-1" id="premium-purchase-btn" data-product="statistics-premium">
+                    Pre-order Now
+                </a>
+                
+                <p class="text-sm text-gray-500 mt-6">
+                    You will receive the complete PDF via email upon its official release.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         FOOTER WITH ECOSYSTEM LINKS
+         ======================================== -->
+    <footer class="bg-gray-800 text-white py-8 text-center">
+        <div class="container mx-auto px-4">
+            <p class="mb-4 text-gray-400">Part of the ToolKit Ecosystem</p>
+            <div class="flex justify-center gap-8 flex-wrap mb-4">
+                <a href="achieve-academy.html" class="text-indigo-400 font-medium hover:text-white transition-colors duration-300">Back to Academy</a>
+            </div>
+            <p class="text-sm text-gray-500 m-0">© 2025 Adam J. Lovell. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ========================================
+         CONVERSION TRACKING & PAYMENT JAVASCRIPT
+         ======================================== -->
+    <script>
+        // Stripe Configuration
+        const stripe = Stripe('pk_test_YOUR_STRIPE_PUBLIC_KEY'); // Replace with actual key
+        
+        // Product Configuration for Upsell
+        const upsellProduct = {
+            priceId: 'price_statistics_999', // This should match the main product's pre-order price ID
+            name: 'Foundational Statistics for Data Analysis',
+            price: 14.99
+        };
+        
+        // Page Load Analytics
+        document.addEventListener('DOMContentLoaded', function() {
+            // Track thank you page view
+            if (window.gtag) {
+                gtag('event', 'page_view', {
+                    page_title: 'Thank You - Free PDF Downloaded',
+                    page_location: window.location.href
+                });
+                
+                gtag('event', 'conversion', {
+                    send_to: 'AW-XXXXXX/XXXXXX', // Replace with your conversion ID
+                    value: 0,
+                    currency: 'USD',
+                    transaction_id: 'free_pdf_' + Date.now()
+                });
+            }
+            
+            // Premium Purchase Button
+            const purchaseBtn = document.getElementById('premium-purchase-btn');
+            if (purchaseBtn) {
+                purchaseBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    handlePremiumPurchase();
+                });
+            }
+        });
+        
+        // Handle Premium PDF Purchase
+        function handlePremiumPurchase() {
+            // Track conversion intent
+            if (window.gtag) {
+                gtag('event', 'begin_checkout', {
+                    currency: 'USD',
+                    value: upsellProduct.price,
+                    items: [{
+                        item_id: 'statistics_premium_pdf',
+                        item_name: upsellProduct.name,
+                        category: 'Digital Product',
+                        quantity: 1,
+                        price: upsellProduct.price
+                    }]
+                });
+            }
+            
+            // Direct to Stripe Payment Link
+            window.location.href = 'https://buy.stripe.com/3cIcN56GIdte9Rm6uAds402';
+        }
+        
+        // Track scroll depth for optimization
+        let maxScroll = 0;
+        window.addEventListener('scroll', function() {
+            const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+            if (scrollPercent > maxScroll) {
+                maxScroll = scrollPercent;
+                
+                // Track scroll milestones
+                if (maxScroll === 25 || maxScroll === 50 || maxScroll === 75 || maxScroll === 90) {
+                    if (window.gtag) {
+                        gtag('event', 'scroll', {
+                            custom_parameter: 'scroll_depth_' + maxScroll
+                        });
+                    }
+                }
+            }
+        });
+    </script>
+    
+    <!-- Schema.org for Conversion Tracking -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Thank You - Download Complete",
+        "description": "Complete your mathematical foundation with the full statistics guide",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "Achieve Academy"
+        },
+        "offers": {
+            "@type": "Offer", // This is a pre-order offer
+            "name": "Foundational Statistics for Data Analysis",
+            "price": "14.99",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+        }
+    }
+    </script>
+</body>
+</html>

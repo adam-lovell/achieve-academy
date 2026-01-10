@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ========================================
+         ACHIEVE ACADEMY - Professional Mathematics Platform
+         
+         Professional applied mathematics curriculum for 
+         software engineers, data analysts, and STEM professionals.
+         ======================================== -->
+    <meta charset="UTF-8">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TS2G01L024"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-TS2G01L024');
+    </script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Achieve Academy - Professional applied mathematics curriculum for software engineers and data analysts. Educational PDF guides and video series by Adam J. Lovell.">
+    <meta name="keywords" content="applied mathematics, statistics, data analysis, software engineering, PDF curriculum, Adam Lovell, mathematical foundations">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Adam J. Lovell">
+    <meta name="copyright" content="Copyright © 2025 Adam J. Lovell. All Rights Reserved.">
+    <meta property="og:title" content="Achieve Academy - Applied Mathematics Curriculum">
+    <meta property="og:description" content="Professional applied mathematics curriculum for software engineers and data analysts by Adam J. Lovell.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-domain.com/achieve-academy.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Achieve Academy - Applied Mathematics Curriculum">
+    <meta name="twitter:description" content="Professional applied mathematics curriculum by Adam J. Lovell.">
+    <link rel="canonical" href="https://your-domain.com/achieve-academy.html">
+    <title>Achieve Academy - Professional Mathematics Curriculum | Adam J. Lovell</title>
+    
+    <!-- Typography: Space Grotesk for headers, Inter for body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        academy: {
+                            primary: tailwind.colors.indigo,
+                            secondary: tailwind.colors.teal,
+                            accent: tailwind.colors.amber,
+                            danger: tailwind.colors.orange,
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Stripe Payment Integration -->
+    <script src="https://js.stripe.com/v3/"></script>
+    
+    <!-- Support Chat Widget - DISABLED FOR MVP -->
+    <!-- <link rel="stylesheet" href="../css/support-chat.css"> -->
+</head>
+<body>
+    <!-- ========================================
+         NAVIGATION BAR
+         ======================================== -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md border-b border-gray-200 z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 flex flex-wrap justify-between items-center py-4 max-w-7xl">
+            <a href="achieve-academy.html" class="font-display text-2xl font-extrabold bg-gradient-to-br from-indigo-600 to-teal-500 bg-clip-text text-transparent uppercase hover:text-indigo-600 transition-colors">Achieve Academy</a> 
+            
+            <!-- Mobile Hamburger -->
+            <button class="flex flex-col justify-center gap-1.5 p-2 md:hidden" id="mobile-menu-button" aria-label="Menu" aria-expanded="false">
+                <span class="w-6 h-0.5 bg-gray-800 transition-all"></span>
+                <span class="w-6 h-0.5 bg-gray-800 transition-all"></span>
+                <span class="w-6 h-0.5 bg-gray-800 transition-all"></span>
+            </button>
+            
+            <!-- Navigation Menu -->
+            <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
+                <div class="flex flex-col md:flex-row items-center gap-6 mt-4 md:mt-0">
+                    <a href="#free-resources" class="text-gray-600 font-medium hover:text-amber-500 transition-colors">Free PDF</a>
+                    <a href="#curriculum" class="text-gray-600 font-medium hover:text-amber-500 transition-colors">Curriculum</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+            
+    <!-- ========================================
+        FREE RESOURCES SECTION
+        ======================================== -->
+        <section class="py-24 bg-gray-50" id="free-resources">
+            <div class="container mx-auto px-4 flex flex-col items-center">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-16 after:h-1 after:bg-amber-500 after:rounded-sm pb-4 font-display">Try Before You Buy</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">Download Achieve Academy's free PDF for Statistical Foundations and see the quality for yourself!</p>
+                </div>
+                
+                <div class="flex flex-col items-center gap-8 max-w-4xl w-full">
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md w-full">
+                        <div class="p-8 bg-gradient-to-br from-teal-600 to-teal-800 text-white">
+                            <div>
+                                <h3 class="text-white text-xl font-bold mb-1">Free Download: Achieve Academy - Applied Math Quantities, Units, and Numeric Meaning</h3>
+                                <p class="text-white/90 m-0">A sample of our introduction to statistical thinking for professionals.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- PDF Embed Placeholder -->
+                        <div class="p-8 min-h-[400px] flex items-center justify-center bg-gray-50" id="free-pdf-embed">
+                            <div class="text-center bg-white p-8 rounded-lg w-full shadow-sm">
+                                <div>
+                                    <h4 class="text-teal-600 text-lg font-bold mb-4">Applied Math Quantities, Units, and Numeric Meaning</h4>
+                                    <ul class="text-left text-gray-600 space-y-2 max-w-md mx-auto list-disc pl-6">
+                                        <li>Approximation is often more useful than precision</li>
+                                        <li>Common statistical mistakes can cost a lot of money</li>
+                                        <li>Understanding units is foundational to accurate interpretation</li>
+                                        <li>Professional confidence building with data</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="p-8 text-center border-t border-gray-200">
+                            <button class="px-8 py-3 bg-gradient-to-br from-amber-500 to-amber-600 text-white border-none rounded-lg font-semibold cursor-pointer mb-2 transition-all hover:-translate-y-0.5 hover:shadow-md text-lg shadow-amber-400/30" id="download-free-pdf">
+                            Download Free PDF
+                            </button>
+                            <p class="text-sm text-gray-400 m-0">No email required • Instant download</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Upgrade Prompt - HIDDEN FOR BETTER UX -->
+                    <!-- 
+                    <div class="upgrade-prompt">
+                        <h3>Ready for the Complete Guide?</h3>
+                        <p>The free preview is just the beginning. Get the full professional guide with comprehensive coverage of statistical foundations and data analysis techniques.</p>
+                        <a href="#curriculum" class="btn-upgrade">Upgrade to Full Curriculum</a>
+                    </div>
+                    -->
+                </div>
+            </div>
+        </section>
+
+    <!-- ========================================
+         CURRICULUM / PRE-ORDER SECTION
+         ======================================== -->
+    <section class="py-24 bg-white" id="curriculum">
+        <div class="container mx-auto px-4 flex flex-col items-center">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-16 after:h-1 after:bg-amber-500 after:rounded-sm pb-4 font-display">Pre-order the Curriculum</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Secure your copy of the complete professional guide.</p>
+            </div>
+
+            <div class="grid grid-cols-1 gap-12 w-full max-w-4xl">
+                <!-- Applied Mathematical Thinking PDF Product -->
+                <div class="bg-white border-2 border-indigo-600 rounded-xl overflow-hidden transition-all hover:-translate-y-1 hover:shadow-xl shadow-lg relative">
+                    <div class="p-8 bg-gradient-to-br from-indigo-600 to-indigo-500 text-white">
+                        <h3 class="text-white text-2xl font-bold mb-2 font-display">Foundational Statistics for Data Analysis</h3>
+                        <p class="text-white/90 text-base m-0">Professional PDF Guide (Pre-order)</p>
+                    </div>
+                    <div class="p-8 flex flex-col gap-6">
+                        <div class="text-gray-600 leading-relaxed">
+                            <p class="mb-4">Master statistical foundations essential for data analysis and decision-making. This comprehensive guide covers statistical concepts through real-world applications, designed specifically for professionals who need to analyze data accurately and avoid costly errors.</p>
+
+                            <div class="mb-6">
+                                <h4 class="text-gray-900 font-bold mb-2 text-lg">What You'll Get:</h4>
+                                <ul class="space-y-2 list-disc list-inside text-gray-700">
+                                    <li>Descriptive Statistics & Data Interpretation</li>
+                                    <li>Statistical Analysis & Hypothesis Testing</li>
+                                    <li>Data Visualization & Pattern Recognition</li>
+                                    <li>Statistical Software Applications</li>
+                                    <li>Real-World Case Studies & Examples</li>
+                                </ul>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 p-6 bg-gray-50 rounded-lg my-6">
+                                <div class="flex flex-col gap-1">
+                                    <span class="text-xs text-gray-400 uppercase tracking-wider font-bold">Format:</span>
+                                    <span class="text-sm text-gray-900 font-medium">Professional PDF</span>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <span class="text-xs text-gray-400 uppercase tracking-wider font-bold">Content:</span>
+                                    <span class="text-sm text-gray-900 font-medium">Comprehensive Problem Set</span>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <span class="text-xs text-gray-400 uppercase tracking-wider font-bold">Level:</span>
+                                    <span class="text-sm text-gray-900 font-medium">Professional/Applied</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="border-t border-gray-200 pt-6 text-center">
+                            <div class="text-center mb-6">
+                                <div class="flex items-baseline justify-center gap-1 mb-2">
+                                    <span class="text-2xl font-semibold text-indigo-600">$</span>
+                                    <span class="text-5xl font-extrabold text-indigo-600">14.99</span>
+                                    <span class="text-base text-gray-500 font-medium">one-time</span>
+                                </div>
+                            </div>
+
+                            <!-- Stripe Payment Button -->
+                            <button class="px-8 py-3 bg-gradient-to-br from-amber-500 to-amber-600 text-white border-none rounded-lg font-semibold cursor-pointer mb-2 transition-all hover:-translate-y-0.5 hover:shadow-md text-lg shadow-amber-400/30" id="purchase-statistics-pdf" data-product="statistics-pdf">
+                                Pre-order PDF Guide
+                            </button>
+
+                            <div class="text-center mt-4">
+                                <p class="text-sm text-gray-500 m-0">You will receive the complete PDF via email upon its official release.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coming Soon Product Placeholder - HIDDEN FOR MVP -->
+                <!--
+                <div class="product-card coming-soon">
+                    <div class="product-badge">COMING SOON</div>
+                    <div class="product-header">
+                        <h3>Advanced Machine Learning Mathematics</h3>
+                        <p class="product-type">PDF Guide + Video Series</p>
+                    </div>
+                    <div class="product-content">
+                        <p>Linear algebra, calculus, and optimization techniques specifically for machine learning applications.</p>
+                        <div class="coming-soon-actions">
+                            <button class="btn-notify" disabled>Notify When Available</button>
+                        </div>
+                    </div>
+                </div>
+                -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SUCCESS STORIES / TESTIMONIALS SECTION
+         ======================================== -->
+    <section class="py-24 bg-gray-50" id="testimonials">
+        <div class="container mx-auto px-4 flex flex-col items-center">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-16 after:h-1 after:bg-amber-500 after:rounded-sm pb-4 font-display">Mathematical Errors Can Cost You Your Career</h2>
+            </div>
+            
+            <!-- Fictional Testimonial Scenario -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden max-w-4xl w-full">
+                <div class="p-8 bg-gray-900 text-white text-center">
+                    <h3 class="text-2xl font-bold mb-2">The Cost of Errors</h3>
+                </div>
+                
+                <div class="p-8 md:p-12">
+                    <div class="flex flex-col gap-8">
+                        <div class="bg-orange-50 p-6 rounded-lg border-l-4 border-orange-500">
+                            <h4 class="text-orange-700 font-bold text-xl mb-4">The Problem:</h4>
+                            <p class="text-gray-700 mb-4 leading-relaxed">Sarah, a senior project analyst at a major engineering firm, was validating performance specs for a high-stakes infrastructure bid. The vendor data looked clean, but she missed a critical discrepancy in how the efficiency metrics were calculated.</p>
+                            
+                            <p class="text-gray-700 mb-4 leading-relaxed">Under pressure to deliver, she ran the analysis without normalizing the dataset. She failed to account for outliers that skewed the averages, resulting in projections that were mathematically valid on paper but physically impossible in the field.</p>
+                            
+                            <p class="text-gray-700 mb-4 leading-relaxed"><strong>The fallout was immediate.</strong> The system underperformed by 40% upon installation. The retrofit cost the firm $2.3 million in damages, and Sarah was let go during the subsequent audit for "gross analytical negligence".</p>
+                            
+                            <div class="mt-6 pt-6 border-t border-orange-200 text-center">
+                                <p class="text-orange-700 font-bold mb-2">A small investment in mathematical foundations can prevent significant professional setbacks.</p>
+                                <p class="text-orange-700/80 italic">Quality mathematical training is a worthwhile career investment.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <h4 class="text-teal-600 font-bold text-xl mb-4">The Solution:</h4>
+                            <p class="text-gray-600 mb-8">This scenario illustrates exactly why Achieve Academy exists. Solid mathematical foundations aren't just academic concepts – they're career-critical skills that directly impact professional outcomes and business success.</p>
+                            
+                            <div class="flex flex-col gap-6">
+                                <div class="flex items-start gap-4">
+                                    <span class="text-2xl shrink-0 text-amber-500 font-bold">1.</span>
+                                    <div>
+                                        <strong class="text-gray-900 block mb-1">Mathematical Accuracy</strong>
+                                        <p class="text-gray-600 m-0">Understanding how to properly validate calculations and avoid costly errors</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <span class="text-2xl shrink-0 text-amber-500 font-bold">2.</span>
+                                    <div>
+                                        <strong class="text-gray-900 block mb-1">Real-World Problem Solving</strong>
+                                        <p class="text-gray-600 m-0">Learning through actual professional scenarios and case studies</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <span class="text-2xl shrink-0 text-amber-500 font-bold">3.</span>
+                                    <div>
+                                        <strong class="text-gray-900 block mb-1">Professional Confidence</strong>
+                                        <p class="text-gray-600 m-0">Being the professional who prevents mathematical errors before they become costly mistakes</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-8 mt-12 text-center rounded-lg">
+                        <div class="max-w-md mx-auto">
+                            <h4 class="text-gray-900 font-bold text-lg mb-2">Invest in Your Mathematical Skills</h4>
+                            <p class="text-gray-600 mb-6">Build confidence with solid mathematical foundations.</p>
+                            <a href="#curriculum" class="inline-block px-8 py-3 bg-indigo-600 text-white no-underline font-semibold rounded-lg transition-all hover:bg-indigo-700 hover:-translate-y-0.5">View Curriculum</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         ABOUT ACHIEVE ACADEMY SECTION
+         ======================================== -->
+
+    <!--
+    <section class="py-24 bg-white" id="about">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-8 font-display">Why I Created Achieve Academy</h2>
+                    <div class="bg-gray-50 p-8 rounded-xl border border-gray-200">
+                        <p class="italic text-gray-600 mb-8">This section will be populated with detailed information about the founding of Achieve Academy and the mission behind providing accessible applied mathematics curriculum for professionals.</p>
+                        
+                        <div class="text-left bg-white p-6 rounded-lg border border-gray-100 mb-6">
+                            <h3 class="text-lg font-bold text-gray-900 mb-4">Key Points to Cover:</h3>
+                            <ul class="space-y-2 text-gray-600">
+                                <li>• Personal motivation for creating applied mathematics curriculum</li>
+                                <li>• Gap in professional mathematical education</li>
+                                <li>• Focus on accessibility and real-world applications</li>
+                                <li>• Vision for helping professionals advance their careers</li>
+                            </ul>
+                        </div>
+                        
+                        <p class="text-sm text-gray-500"><strong>Note:</strong> This content will be updated with your specific story and mission statement.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    -->
+
+    <!-- ========================================
+         FOOTER SECTION
+         ======================================== -->
+    <footer class="bg-gray-800 text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12 text-center md:text-left">
+                <div class="md:col-span-1">
+                    <a href="achieve-academy.html" class="text-2xl font-bold mb-2 bg-gradient-to-br from-indigo-400 to-teal-400 bg-clip-text text-transparent font-display inline-block">Achieve Academy</a>
+                    <p class="text-gray-400">Applied Mathematics for Professionals</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-4 text-lg">Curriculum</h4>
+                    <div class="flex flex-col gap-2">
+                        <a href="#curriculum" class="text-gray-400 no-underline hover:text-indigo-300 transition-colors">Foundational Statistics for Data Analysis</a>
+                        <a href="#free-resources" class="text-gray-400 no-underline hover:text-indigo-300 transition-colors">Free Resources</a>
+                        <a href="mailto:adam_lovell@student.uml.edu" class="text-gray-400 no-underline hover:text-indigo-300 transition-colors">Contact</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-700">
+                <div class="text-center text-gray-400 text-sm">
+                    <p class="mb-2">© 2025 Achieve Academy. All rights reserved.</p>
+                    <p>Professional applied mathematics curriculum by Adam J. Lovell, Building Automation Program Manager at Roxbury Community College.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================
+         JAVASCRIPT & PAYMENT INTEGRATION
+         ======================================== -->
+    <!-- Shared ToolKit JavaScript -->
+    <script src="../../js/toolkit-main.js"></script>
+    
+    <!-- Support Chat Widget - DISABLED FOR MVP -->
+    <!-- <script src="../../js/support-chat.js"></script> -->
+    
+    <!-- Academy-specific JavaScript -->
+    <script>
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                const isExpanded = !mobileMenu.classList.contains('hidden');
+                menuBtn.setAttribute('aria-expanded', isExpanded);
+            });
+            
+            // Close menu when clicking a link
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    menuBtn.setAttribute('aria-expanded', 'false');
+                });
+            });
+        }
+
+        // Stripe Configuration (Using same system as ToolKit)
+        const stripe = Stripe('pk_test_YOUR_STRIPE_PUBLIC_KEY'); // Replace with actual key
+        
+        // Product Configuration
+        const products = {
+            'statistics-pdf': {
+                priceId: 'price_statistics_999', // Replace with actual Stripe price ID
+                name: 'Foundational Statistics for Data Analysis PDF',
+                price: 14.99
+            }
+        };
+        
+        // Purchase Button Handler
+        document.addEventListener('DOMContentLoaded', function() {
+            // Statistics PDF Purchase
+            const purchaseBtn = document.getElementById('purchase-statistics-pdf');
+            if (purchaseBtn) {
+                purchaseBtn.addEventListener('click', function() {
+                    handlePurchase('statistics-pdf');
+                });
+            }
+            
+            // Free PDF Download
+            const freeDownloadBtn = document.getElementById('download-free-pdf');
+            if (freeDownloadBtn) {
+                freeDownloadBtn.addEventListener('click', function() {
+                    handleFreeDownload();
+                });
+            }
+        });
+        
+        // Handle Stripe Payments
+        function handlePurchase(productId) {
+            // Direct to Stripe Payment Link
+            window.location.href = 'https://buy.stripe.com/3cIcN56GIdte9Rm6uAds402';
+        }
+        
+        // Handle Free PDF Download
+        function handleFreeDownload() {
+            // Track download event
+            if (window.gtag) {
+                gtag('event', 'download', {
+                    event_category: 'Free Resource',
+                    event_label: 'Applied Math Quantities, Units and Numeric Meaning PDF'
+                });
+            }
+            
+            // Trigger download (replace with actual PDF URL when available)
+            const link = document.createElement('a');
+            link.href = '../assets/Applied-Math-Quantities-Units-and-Numeric-Meaning.pdf'; // Correct path to the asset
+            link.download = 'Applied-Math-Quantities-Units-and-Numeric-Meaning.pdf';
+            link.click();
+            
+            // Redirect to high-converting thank you page
+            setTimeout(() => {
+                window.location.href = 'thank-you.html';
+            }, 1000); // Small delay to ensure download starts
+        }
+        
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "Achieve Academy",
+        "description": "Professional applied mathematics curriculum for engineers, analysts, and STEM professionals",
+        "url": "https://your-domain.com/achieve-academy.html",
+        "founder": {
+            "@type": "Person",
+            "name": "Adam J. Lovell",
+            "jobTitle": "Building Automation Program Manager",
+            "affiliation": {
+                "@type": "Organization",
+                "name": "Roxbury Community College"
+            }
+        },
+        "offers": {
+            "@type": "Offer",
+            "name": "Foundational Statistics for Data Analysis PDF",
+            "price": "14.99",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+</body>
+</html>
