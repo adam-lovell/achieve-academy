@@ -403,7 +403,7 @@
         }
 
         // Stripe Configuration (Using same system as ToolKit)
-        const stripe = Stripe('pk_test_YOUR_STRIPE_PUBLIC_KEY'); // Replace with actual key
+        // const stripe = Stripe('pk_test_YOUR_STRIPE_PUBLIC_KEY'); // Not needed for Payment Links
         
         // Product Configuration
         const products = {
@@ -451,9 +451,11 @@
             
             // Trigger download (replace with actual PDF URL when available)
             const link = document.createElement('a');
-            link.href = '../assets/Applied-Math-Quantities-Units-and-Numeric-Meaning.pdf'; // Correct path to the asset
+            link.href = 'assets/Applied-Math-Quantities-Units-and-Numeric-Meaning.pdf'; // Correct path to the asset
             link.download = 'Applied-Math-Quantities-Units-and-Numeric-Meaning.pdf';
+            document.body.appendChild(link);
             link.click();
+            document.body.removeChild(link);
             
             // Redirect to high-converting thank you page
             setTimeout(() => {
